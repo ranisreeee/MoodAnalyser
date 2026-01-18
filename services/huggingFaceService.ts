@@ -4,7 +4,13 @@
  * Model: distilbert-base-uncased-finetuned-sst-2-english
  */
 export const analyzeSentimentHF = async (text: string): Promise<{ label: string; score: number } | null> => {
-  const hfToken = process.env.HF_API_TOKEN; // Ensure this is set in your environment
+  let hfToken: string | undefined;
+  try {
+    hfToken = process.env.HF_API_TOKEN;
+  } catch (e) {
+    console.warn("process.env not available in this environment.");
+  }
+
   if (!hfToken) {
     console.warn("Hugging Face Token is missing, skipping HF analysis");
     return null;

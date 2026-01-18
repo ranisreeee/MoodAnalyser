@@ -4,7 +4,13 @@
  * Requires process.env.YOUTUBE_API_KEY to be set.
  */
 export const searchYouTubeSong = async (query: string): Promise<string | null> => {
-  const apiKey = process.env.YOUTUBE_API_KEY;
+  let apiKey: string | undefined;
+  try {
+    apiKey = process.env.YOUTUBE_API_KEY;
+  } catch (e) {
+    console.warn("process.env not available in this environment.");
+  }
+
   if (!apiKey) {
     console.error("YouTube API Key is missing");
     return null;
