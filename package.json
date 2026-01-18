@@ -1,5 +1,5 @@
 {
-  "name": "sentience-student-mood-tracker",
+  "name": "student-health-wellbeing",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,7 +13,9 @@
     "react-dom": "^19.2.3",
     "@google/genai": "^1.37.0",
     "lucide-react": "^0.562.0",
-    "recharts": "^3.6.0"
+    "recharts": "^3.6.0",
+    "vite": "^7.3.1",
+    "@vitejs/plugin-react": "^5.1.2"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
