@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { User, UserRole, MoodRecord, AnalysisResult, UserSettings } from './types';
 import { MOCK_STUDENTS, MOCK_LEADERS } from './constants';
@@ -50,7 +49,7 @@ const App: React.FC = () => {
 
   const triggerNotification = useCallback(() => {
     if (Notification.permission === 'granted') {
-      new Notification("Sentience: Time to Check-in", {
+      new Notification("Wellbeing Check-in", {
         body: "Your emotional well-being matters. Take a moment to reflect.",
         icon: "/favicon.ico"
       });
@@ -181,7 +180,7 @@ const App: React.FC = () => {
             <div className="w-24 h-24 bg-indigo-600 rounded-[2.5rem] mx-auto flex items-center justify-center mb-8 shadow-2xl shadow-indigo-200 rotate-6 transition-transform hover:rotate-12 cursor-pointer">
               <Heart className="text-white fill-white" size={48} />
             </div>
-            <h1 className="text-5xl font-black text-gray-900 tracking-tighter mb-2">SENTIENCE</h1>
+            <h1 className="text-4xl font-black text-gray-900 tracking-tighter mb-2 leading-tight">FOSTERING STUDENT WELLBEING</h1>
             <p className="text-gray-400 font-bold uppercase text-[10px] tracking-[0.4em]">Emotional Intelligence Hub</p>
           </div>
 
@@ -303,7 +302,7 @@ const App: React.FC = () => {
               <div className="w-14 h-14 bg-indigo-600 rounded-[1.5rem] flex items-center justify-center shadow-2xl shadow-indigo-200 transition-transform group-hover:scale-110">
                 <Heart className="text-white fill-white" size={28} />
               </div>
-              <span className="text-3xl font-black tracking-tighter text-gray-900 group-hover:text-indigo-600 transition-colors">SENTIENCE</span>
+              <span className="text-2xl font-black tracking-tighter text-gray-900 group-hover:text-indigo-600 transition-colors uppercase">WELLBEING</span>
             </div>
             <div className="flex items-center gap-8">
               <div className="hidden lg:flex flex-col items-end">

@@ -1,4 +1,3 @@
-
 self.addEventListener('install', (event) => {
   self.skipWaiting();
 });
@@ -9,7 +8,7 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('push', (event) => {
   const data = event.data ? event.data.json() : {};
-  const title = data.title || 'Sentience Mood Check-in';
+  const title = data.title || 'Student Wellbeing Check-in';
   const options = {
     body: data.body || "It's time for your periodic emotional check-in.",
     icon: '/favicon.ico',
