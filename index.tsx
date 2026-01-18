@@ -1,16 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-
-// Shim for process.env to ensure compatibility with library code that expects it
+// Shim for process.env must be at the very top before other imports
 if (typeof window !== 'undefined' && !window.process) {
   (window as any).process = { env: {} };
 }
 
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
 // Register Service Worker for background capabilities
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    // Using relative path to ensure it resolves correctly in the dist folder
+    // Relative path for the built service worker
     navigator.serviceWorker.register('./sw.js').then(registration => {
       console.log('SW registered:', registration);
     }).catch(error => {
